@@ -1,4 +1,5 @@
 🔍 Cercatore — Data Discovery e Analisi dei Dati Sensibili
+
 Cercatore è un tool open-source per la scansione automatica di file su file system locali o condivisi, progettato per identificare e classificare dati sensibili all'interno di file .txt, .pdf, .docx, .xlsx, immagini e altro.
 
 Il sistema genera report completi in Excel, PDF, e grafici interattivi. Include una Web GUI semplice da usare.
