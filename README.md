@@ -21,7 +21,6 @@ cercatore/
 │   ├── reports.html         # Lista dei report
 │   ├── filtered_risk.html   # Report filtrati per rischio
 │   └── filtered_tags.html   # Report filtrati per tag
-├── static/                  # (opzionale: favicon, sfondo)
 └── report/                  # Cartella dove vengono generati i report
 ⚙️ Requisiti
 Python 3.8+
