@@ -3,6 +3,11 @@ Cercatore è un tool open-source per la scansione automatica di file su file sys
 
 Il sistema genera report completi in Excel, PDF, e grafici interattivi. Include una Web GUI semplice da usare.
 
+<img width="1447" height="532" alt="image" src="https://github.com/user-attachments/assets/a6f9dd3b-31ec-4e1f-9bca-96cc319bb6bc" />
+<img width="1364" height="883" alt="image" src="https://github.com/user-attachments/assets/6231432f-bcf9-4ffb-b262-7ede6df90853" />
+<img width="582" height="278" alt="image" src="https://github.com/user-attachments/assets/ccdba7a5-67c6-4b0d-bce9-3976fdc65a01" />
+
+
 📦 Funzionalità principali
 ✅ Estrazione e analisi di contenuto da file di vario tipo
 ✅ OCR integrato per analizzare immagini (.jpg, .png, .pdf scannerizzati)
