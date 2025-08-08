@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Cercatore - Avvio scansione</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        function toggleCustomPath(sel) {
+            const customInput = document.getElementById("custom_path_input");
+            if (sel.value === "custom") {
+                customInput.style.display = "block";
+            } else {
+                customInput.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="mb-4">Cercatore - Interfaccia Web</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <div class="mb-3">
+            <label for="path_select" class="form-label">Cartella da scansionare</label>
+            <select name="path_select" id="path_select" class="form-select" onchange="toggleCustomPath(this)">
+                <option value="/mnt/c">/mnt/c</option>
+                <option value="/mnt/e">/mnt/e</option>
+                <option value="custom">Altro (inserisci manualmente)</option>
+            </select>
+        </div>
+
+        <div class="mb-3" id="custom_path_input" style="display:none;">
+            <label for="custom_path" class="form-label">Percorso personalizzato</label>
+            <input type="text" class="form-control" name="custom_path" id="custom_path">
+        </div>
+
+        <div class="mb-3">
+            <label for="max_size" class="form-label">Dimensione massima file (MB)</label>
+            <input type="number" class="form-control" name="max_size" id="max_size" value="10">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Avvia scansione</button>
+        <a href="/report" class="btn btn-secondary">Visualizza report</a>
+    </form>
+</div>
+</body>
+</html>

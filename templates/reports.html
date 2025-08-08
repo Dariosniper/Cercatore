@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Report generati</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="mb-4">Report generati</h2>
+    {% if reports %}
+        {% for report in reports %}
+            <div class="mb-4">
+                <h5>{{ report.name }}</h5>
+
+                <div class="row mb-3">
+                    {% if "rischi.png" in report.files %}
+                        <div class="col-md-6">
+                            <a href="{{ url_for('filtered_view', report=report.name, filter='rischio') }}">
+                                <img src="{{ url_for('download_file', report=report.name, filename='rischi.png') }}" alt="Grafico Rischi" class="img-fluid">
+                            </a>
+                        </div>
+                    {% endif %}
+                    {% if "sensibili.png" in report.files %}
+                        <div class="col-md-6">
+                            <a href="{{ url_for('filtered_view', report=report.name, filter='tags') }}">
+                                <img src="{{ url_for('download_file', report=report.name, filename='sensibili.png') }}" alt="Grafico Sensibili" class="img-fluid">
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+
+                <ul>
+                    {% for file in report.files %}
+                        <li>
+                            <a href="{{ url_for('download_file', report=report.name, filename=file) }}">{{ file }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="alert alert-warning">Nessun report trovato.</div>
+    {% endif %}
+    <a href="{{ url_for('index') }}" class="btn btn-primary mt-3">Torna alla scansione</a>
+</div>
+</body>
+</html>
